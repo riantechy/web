@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h2>Interesting People</h2>
+<form  onSubmit = "return userInfo();">
+
+  <!-- userInfo section -->
+  <div class="format-output1">
+    <label for="YName">Your Name:</label>
+    <input type="text" id="YName" name="YName" placeholder="Your Name"><br>
+
+    <label for="historic">The year you were born in:</label>
+    <input type="number" id="age" name="age" placeholder="Your Age..."><br>
+  </div>
+
+  <!-- famousFigureInfo section -->
+  <div class="format-output2">
+    <label for="historic">The name of a historical figure you respect:</label>
+    <input type="text" id="historic" name="historic" placeholder="Your historical Name"><br>
+
+    <label for="country">The country that historical figure was born in:</label>
+    <input type="text" id="Ycountry" name="country" placeholder="Your country..."><br>
+  </div>
+  <br>
+  
+  <!-- userInfo div to ouput the data entered -->
+  <div class="userInfo">
+    <p id="info"></p>
+    <p id="famous"></p>
+  </div>
+
+  <button type="submit" >Submit</button>
+</form>
+</body>
+<script>
+  function userInfo(){
+  var name = document.getElementById("YName").value; 
+  var year = document.getElementById("age").value;
+  var age = new Date().getFullYear() - year;
+
+  var person = document.getElementById("historic").value;
+  var country = document.getElementById("Ycountry").value;
+
+  var userInfoF = "Your name is " + name +". You are "+ age + " years old.";
+  var famousFigureInfoF = "Your respect " + person +". They were born in "+ country +".";
+
+
+
+  document.getElementById('info').innerHTML = userInfoF;
+  document.getElementById('famous').innerHTML = famousFigureInfoF;
+
+
+
+  return false; 
+}
+</script>
+
+
+</html>
